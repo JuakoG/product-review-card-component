@@ -1,0 +1,148 @@
+:root {
+  /* Colores, Fuentes de texto, Espaciados (margin/padding), etc. */
+  --darkCyan: hsl(158, 36%, 37%);
+  --moreDarkCyan: hsl(157, 37%, 18%);
+  --cream: hsl(30, 38%, 92%);
+  --veryDarkBlue: hsl(212, 21%, 14%);
+  --darkGrayishBlue: hsl(228, 12%, 48%);
+  --white: hsl(0, 0%, 100%);
+  --fontParagraph: 0.875rem; /* 14px */
+  --fontPreTitle: 0.75rem; /* 12px */
+  --fontPrice: 1.75rem; /* 28px */
+  --spacing-1: 2rem; /* 32px */
+  --spacing-2: 1.25rem; /* 20px */
+}
+
+body {
+  height: 100vh; /* Viewport */
+  background-color: var(--cream);
+}
+
+* {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+
+.container {
+  height: inherit;
+  max-width: 90rem; /* 1440px */
+  margin: 0 auto; /* Centrar contenedor */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  height: 28.75rem; /* 460px */
+  width: 100%;
+  max-width: 37.5rem; /* 600px */
+  display: flex;
+  flex-flow: row nowrap;
+  box-sizing: border-box;
+}
+
+/* Contenedor Imagen */
+
+.card-image {
+  border-radius: 3% 0 0 3%;
+  height: 100%;
+  width: 50%;
+  box-sizing: border-box;
+  background-image: url("../images/image-product-desktop.jpg");
+  background-size: cover;
+}
+
+/* Contenedor Texto */
+
+.card-text {
+  border-radius: 0 3% 3% 0;
+  width: 50%;
+  background-color: var(--white);
+  padding: var(--spacing-1);
+  box-sizing: border-box; /* incluye el padding y el border de un elemento a su alto y ancho */
+}
+
+.pre-title {
+  color: var(--darkGrayishBlue);
+  font-size: var(--fontPreTitle);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.title {
+  color: var(--veryDarkBlue);
+  font-family: "Fraunces", serif;
+}
+
+.description {
+  color: var(--darkGrayishBlue);
+  font-size: var(--fontParagraph);
+  line-height: 1.5;
+  margin-bottom: var(--spacing-2);
+}
+
+.price-container {
+  display: flex;
+  align-items: center;
+  height: 2.5rem; /* 40px */
+  margin-bottom: var(--spacing-1);
+}
+
+.current-price {
+  color: var(--darkCyan);
+  font-family: "Fraunces", serif;
+  font-size: var(--fontPrice);
+}
+
+.old-price {
+  color: var(--darkGrayishBlue);
+  font-size: var(--fontParagraph);
+  text-decoration: line-through;
+  margin-left: var(--spacing-2);
+}
+
+.add-to-cart {
+  background-color: var(--darkCyan);
+  border: 0;
+  height: 2.8125rem; /* 45px */
+  width: 100%;
+  border-radius: 5px;
+  color: var(--white);
+  font-size: var(--fontParagraph);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.add-to-cart:hover {
+  background-color: var(--moreDarkCyan);
+}
+
+.icon-cart {
+  position: relative;
+  top: 0.25rem;
+  margin-right: 0.5rem;
+}
+
+@media (max-width: 38.125rem) {
+  .container {
+    align-items: space-around;
+    padding: 0 var(--spacing-2);
+  }
+
+  .card {
+    height: 38.25rem; /* 612px */
+    flex-flow: column nowrap;
+  }
+
+  .card-text {
+    width: 100%;
+    border-radius: 0 0 3% 3%;
+  }
+
+  .card-image {
+    background-image: url("../images/image-product-mobile.jpg");
+    height: 260px;
+    width: 100%;
+    border-radius: 3% 3% 0 0;
+  }
+}
